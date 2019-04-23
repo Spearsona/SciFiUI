@@ -29,14 +29,19 @@ public class UI extends PApplet
     {
         size(800, 800);
         // Use fullscreen instead of size to make your interface fullscreen
-        //fullScreen(P3D); 
+        fullScreen(1); 
     }
 
     public void setup()
     {
+
+        float radarPosX = map(75, 0, 100, 0, width);
+        float radarPosY = map(25, 0, 100, 0, height);
+        float radarSize = map(25, 0, 800, 0, height);
+
         b = new Button(this, 50, 50, 100, 50, "I am a button");
         mc = new MovingCircle(this, width / 2, height * .75f, 50);
-        radar = new Radar(this, 1, width / 2, height / 2, 100);
+        radar = new Radar(this, 1, radarPosX, radarPosY , radarSize);
     }
 
     Radar radar;
