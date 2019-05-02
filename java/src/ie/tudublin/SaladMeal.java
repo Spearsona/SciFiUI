@@ -9,7 +9,7 @@ public class SaladMeal extends Consumable implements MainCourse {
 
     @Override
     public String describeFoodPrep() {
-        return "Thrown into a salad bowl and mixed";
+        return "Thrown leaves into a salad bowl and mix with dressing";
     }
 
     @Override
