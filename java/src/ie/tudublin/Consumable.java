@@ -46,6 +46,11 @@ public abstract class Consumable
         
     }
     */
+    @Override
+    public String toString() {
+        return this.name + " is " + this.description + "and contains "
+         + Integer.toString(this.calories) + "calories" ;
+    }
 
 
     
