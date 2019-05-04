@@ -23,6 +23,10 @@ public class MealSelector extends PApplet{
         System.out.println(testMainCourse.describeFoodPrep());
         System.out.println(testDessert.describeFoodPrep());
 
+        mealList.add(testDrink);
+
+        Consumable testprinter = mealList.get(0);
+        System.out.println(testprinter.describeFoodPrep());
     }
          
     
