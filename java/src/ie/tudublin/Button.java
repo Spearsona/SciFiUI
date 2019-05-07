@@ -2,7 +2,7 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class Button
+public class Button extends PApplet
 {
     UI ui;
     private float x;
@@ -10,6 +10,7 @@ public class Button
     private float width;
     private float height;
     private String text;
+    
     
 
     public Button(UI ui, float x, float y, float width, float height, String text)
@@ -19,6 +20,7 @@ public class Button
         this.y = y;
         this.width = width;
         this.height = height;
+         
         this.text = text;
     }
 
@@ -34,20 +36,28 @@ public class Button
         ui.text(text, x + width * 0.5f, y + height * 0.5f);
     }
 
-    public void checkBounds(){
+    public boolean checkBounds(){
         if((ui.mouseX > x) && (ui.mouseX < x + width) && (ui.mouseY > y) && (ui.mouseY > y + height)){
             ui.fill(204, 102, 0);
-            System.out.println("\nMouse X is: " + ui.mouseX);
+            
+            /*System.out.println("\nMouse X is: " + ui.mouseX);
             System.out.println("\nMouse Y is: " + ui.mouseY);
             System.out.println("x is: " + x);
             System.out.println("Y is: " + x);
+            */
+
+            return false;
         }
         else{
             ui.fill(255);
+            return true;
         }
+
+        
        
 
     }
+    public void doClick(){};
 
 
 }

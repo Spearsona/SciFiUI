@@ -1,0 +1,7 @@
+ Get check bounds in order 
+
+ create all buttons and add them to the list - create a mainMeal buttons and bevs button
+
+ create a button called done - tells MealSelector to put all the meals in a list of Consumables, then send it to MealPreparer
+
+ the MealSelector will update the calorie counter

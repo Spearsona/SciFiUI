@@ -1,16 +1,20 @@
 package ie.tudublin;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import processing.core.PApplet;
 
 public class UI extends PApplet
 {
+    List<Button> foodbuttons;
     Button b;
-
     Button bev;
     Button mainMeal;
     Button dessert;
 
 
+    
     MovingCircle mc;
     MealSelector meal;
 
@@ -41,6 +45,7 @@ public class UI extends PApplet
 
     public void setup()
     {
+        foodbuttons = new ArrayList<Button>();
 
         float radarPosX = map(95, 0, 100, 0, width);
         float radarPosY = map(10, 0, 100, 0, height);
@@ -53,18 +58,16 @@ public class UI extends PApplet
         
         float gap = map(0.5f, 0, 100, 0, width);
 
-
-        
-
-        b = new Button(this, buttonPosX, buttonPosY, buttonWidth, buttonHeight, "Dispense");
+        //b = new Button(this, buttonPosX, buttonPosY, buttonWidth, buttonHeight, "Dispense");
         meal = new MealSelector();
        
         //mc = new MovingCircle(this, width / 2, height * .75f, 50);
         radar = new Radar(this, 1, radarPosX, radarPosY , radarSize);
 
-        bev = new Button(this, buttonPosX, buttonPosY, buttonWidth, buttonHeight, "Beverage");
-        dessert = new Button(this, buttonPosX + (2.3f * buttonWidth) + gap, buttonPosY, buttonWidth, buttonHeight, "Dessert");
-        mainMeal = new Button(this, buttonPosX + (1.1f * buttonWidth) + gap, buttonPosY, buttonWidth, buttonHeight, "Main Meal");
+        //bev = new Button(this, buttonPosX, buttonPosY, buttonWidth, buttonHeight, new CherryCola());
+        dessert = new DessertSettingButton(this, buttonPosX + (2.3f * buttonWidth) + gap, buttonPosY, buttonWidth, buttonHeight, new HotFudgeSundae(), meal);
+        foodbuttons.add(dessert);
+        //mainMeal = new Button(this, buttonPosX + (1.1f * buttonWidth) + gap, buttonPosY, buttonWidth, buttonHeight, new SaladMeal());
         
     }
 
@@ -73,9 +76,9 @@ public class UI extends PApplet
     public void draw()
     {
         //b.render();
-        bev.render();
+        //bev.render();
         dessert.render();
-        mainMeal.render();
+        //mainMeal.render();
 
         ellipse(mouseX, mouseY, 9, 9);
         //b.checkBounds();
@@ -83,7 +86,7 @@ public class UI extends PApplet
         
         //mc.update();
         //mc.render();
-
+        
         printMeal();
 
         //radar.update();
@@ -108,6 +111,26 @@ public class UI extends PApplet
             Consumable mealitem = meal.mealList.get(i);
             text(mealitem.describeFoodPrep(), menuPosX, menuPosY + (gap * i));
         }
+    }
+
+    public void mousePressed(){
+        
+        for(Button button:foodbuttons)
+        {
+
+            if(button.checkBounds()){
+                button.doClick();
+
+            }
+            else{
+                System.out.println("False");
+            }
+            
+            System.out.println("Looping");
+
+
+        }
+        System.out.println("James is a silly boi");
     }
 }
 
