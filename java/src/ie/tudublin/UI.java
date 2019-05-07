@@ -130,7 +130,7 @@ public class UI extends PApplet
 
 
         }
-        System.out.println("James is a silly boi");
+        
     }
 }
 
