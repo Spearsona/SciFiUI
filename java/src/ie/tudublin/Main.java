@@ -10,19 +10,20 @@ public class Main
 		
 	}
 
-	public void mealSelector()
+	/*public void mealSelector()
 	{
 		String[] a = {"MAIN"};
         processing.core.PApplet.runSketch( a, new MealSelector());
 		
 	}
+	*/
 
 	public static void main(String[] args)
 	{
 		Main main = new Main();
-		//main.startUI();
+		main.startUI();
 		
-		main.mealSelector();
+		//main.mealSelector();
 		
 
 		//MealSelector, setUp JCombo Boxes so instaniate variables store consumables in list of Consumables

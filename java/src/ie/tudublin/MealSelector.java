@@ -2,9 +2,9 @@ package ie.tudublin;
 
 import java.util.ArrayList;
 
-import processing.core.PApplet;
 
-public class MealSelector extends PApplet{
+
+public class MealSelector{
     public ArrayList<Consumable> mealList = new ArrayList<Consumable>();
     
 
@@ -24,9 +24,16 @@ public class MealSelector extends PApplet{
         System.out.println(testDessert.describeFoodPrep());
 
         mealList.add(testDrink);
+        mealList.add(testMainCourse);
+        mealList.add(testDessert);
 
-        Consumable testprinter = mealList.get(0);
-        System.out.println(testprinter.describeFoodPrep());
+        System.out.println("\nPrinting Meal");
+        for(int i = 0; i < mealList.size(); i++){
+            Consumable testprinter = mealList.get(i);
+            System.out.println(testprinter.describeFoodPrep());
+        }
+        
+        
     }
          
     
