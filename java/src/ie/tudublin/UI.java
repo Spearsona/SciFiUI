@@ -40,7 +40,14 @@ public class UI extends PApplet
         float radarPosY = map(10, 0, 100, 0, height);
         float radarSize = map(2.5f,0, 100, 0, height);
 
-        b = new Button(this, 50, 50, 100, 50, "Dispense");
+        float buttonPosX =  map(30, 0, 100, 0, width);
+        float buttonPosY =  map(30, 0, 100, 0, height);
+        float buttonWidth =  map(5, 0, 100, 0, width);
+        float buttonHeight =  map(2.5f, 0, 100, 0, height);
+
+        
+
+        b = new Button(this, buttonPosX, buttonPosY, buttonWidth, buttonHeight, "Dispense");
         meal = new MealSelector();
        
         //mc = new MovingCircle(this, width / 2, height * .75f, 50);
@@ -54,9 +61,12 @@ public class UI extends PApplet
     {
         background(0);
         b.render();
-
+        b.checkBounds();
+        background(0);
+        noFill();
         //mc.update();
         //mc.render();
+
         printMeal();
 
         radar.update();
@@ -69,6 +79,7 @@ public class UI extends PApplet
     }
 
     public void printMeal(){
+        textAlign(LEFT);
         float menuPosX = map(75, 0, 100, 0, width);
         float menuPosY = map(25, 0, 100, 0, height);
 
@@ -77,7 +88,6 @@ public class UI extends PApplet
 
         for(int i=0; i < meal.mealList.size(); i++)
         {   
-            
             Consumable mealitem = meal.mealList.get(i);
             text(mealitem.describeFoodPrep(), menuPosX, menuPosY + (gap * i));
         }

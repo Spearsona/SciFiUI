@@ -2,7 +2,7 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class Button
+public class Button extends PApplet
 {
     UI ui;
     private float x;
@@ -29,4 +29,18 @@ public class Button
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
         ui.text(text, x + width * 0.5f, y + height * 0.5f);
     }
+
+    public void checkBounds(){
+        if((ui.mouseX > x) && (ui.mouseX < x + width) && (ui.mouseY > y + height)){
+            ui.fill(0);
+            ui.fill(204, 102, 0);
+        }
+        else{
+            ui.fill(255);
+        }
+       
+
+    }
+
+
 }
