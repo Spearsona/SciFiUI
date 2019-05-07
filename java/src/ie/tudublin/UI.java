@@ -5,6 +5,12 @@ import processing.core.PApplet;
 public class UI extends PApplet
 {
     Button b;
+
+    Button bev;
+    Button mainMeal;
+    Button dessert;
+
+
     MovingCircle mc;
     MealSelector meal;
 
@@ -44,6 +50,9 @@ public class UI extends PApplet
         float buttonPosY =  map(30, 0, 100, 0, height);
         float buttonWidth =  map(5, 0, 100, 0, width);
         float buttonHeight =  map(2.5f, 0, 100, 0, height);
+        
+        float gap = map(0.5f, 0, 100, 0, width);
+
 
         
 
@@ -52,6 +61,10 @@ public class UI extends PApplet
        
         //mc = new MovingCircle(this, width / 2, height * .75f, 50);
         radar = new Radar(this, 1, radarPosX, radarPosY , radarSize);
+
+        bev = new Button(this, buttonPosX, buttonPosY, buttonWidth, buttonHeight, "Beverage");
+        dessert = new Button(this, buttonPosX + (2.3f * buttonWidth) + gap, buttonPosY, buttonWidth, buttonHeight, "Dessert");
+        mainMeal = new Button(this, buttonPosX + (1.1f * buttonWidth) + gap, buttonPosY, buttonWidth, buttonHeight, "Main Meal");
         
     }
 
@@ -59,18 +72,22 @@ public class UI extends PApplet
 
     public void draw()
     {
-        background(0);
-        b.render();
-        b.checkBounds();
-        background(0);
-        noFill();
+        //b.render();
+        bev.render();
+        dessert.render();
+        mainMeal.render();
+
+        ellipse(mouseX, mouseY, 9, 9);
+        //b.checkBounds();
+        
+        
         //mc.update();
         //mc.render();
 
         printMeal();
 
-        radar.update();
-        radar.render();
+        //radar.update();
+        //radar.render();
 
         if (checkKey(LEFT))
         {
