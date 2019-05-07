@@ -53,7 +53,7 @@ public class UI extends PApplet
 
         float buttonPosX =  map(30, 0, 100, 0, width);
         float buttonPosY =  map(30, 0, 100, 0, height);
-        float buttonWidth =  map(5, 0, 100, 0, width);
+        float buttonWidth =  map(8, 0, 100, 0, width);
         float buttonHeight =  map(2.5f, 0, 100, 0, height);
         
         float gap = map(0.5f, 0, 100, 0, width);
@@ -75,12 +75,14 @@ public class UI extends PApplet
 
     public void draw()
     {
+        stroke(255);
+        background(0);
         //b.render();
         //bev.render();
         dessert.render();
         //mainMeal.render();
 
-        ellipse(mouseX, mouseY, 9, 9);
+        
         //b.checkBounds();
         
         
@@ -89,8 +91,8 @@ public class UI extends PApplet
         
         printMeal();
 
-        //radar.update();
-        //radar.render();
+        radar.update();
+        radar.render();
 
         if (checkKey(LEFT))
         {

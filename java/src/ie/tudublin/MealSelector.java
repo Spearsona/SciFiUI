@@ -34,7 +34,7 @@ public class MealSelector{
         //System.out.println("\nPrinting Meal");
         for(int i = 0; i < mealList.size(); i++){
             Consumable testprinter = mealList.get(i);
-            //System.out.println(testprinter.describeFoodPrep());
+            System.out.println(testprinter.describeFoodPrep());
         }
         
         
@@ -43,7 +43,6 @@ public class MealSelector{
 
     public void setDessert(Dessert type) 
     {
-
         this.dessert = type;
         System.out.println(type.getName());
 	}

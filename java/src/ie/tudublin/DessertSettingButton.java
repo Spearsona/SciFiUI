@@ -6,12 +6,9 @@ public class DessertSettingButton extends Button{
 
     DessertSettingButton(UI ui, float x, float y, float width, float height, Dessert type, MealSelector mealselect) {
         super(ui, x, y, width, height, type.getName());
-
         this.type = type;
         this.mealselect = mealselect;
         System.out.println("in DessertSettingClass");
-        //clicked();
-        
     }
 
     //check if button has been clicked
