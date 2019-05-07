@@ -1,12 +1,13 @@
 # SciFi UI Project
 
-Name:
+Name: Stephen Pearson	
 
-Student Number: 
-
-Fork this repository and use it a starter project for your assignment
+Student Number: C17753589
 
 # Description of the assignment
+
+Creating a UI for a futuristic food dispenser in a Paranoia/Fallout-style dystopia. It will allow the user to put together a meal based on a set menu,
+but only allow the user to consume a certain number of calories. 
 
 # Instructions
 
@@ -16,7 +17,7 @@ Fork this repository and use it a starter project for your assignment
 
 # Markdown Tutorial
 
-This is *emphasis*
+
 
 This is a bulleted list
 
