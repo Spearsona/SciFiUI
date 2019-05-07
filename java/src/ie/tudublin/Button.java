@@ -10,7 +10,6 @@ public class Button
     private float width;
     private float height;
     private String text;
-    private boolean overMouse;
     
 
     public Button(UI ui, float x, float y, float width, float height, String text)
