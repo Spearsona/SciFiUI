@@ -12,9 +12,11 @@ public class MealSelector{
 
     public MealSelector()
     {
-        makeMeal();
+        
+       //makeMeal();
     }
 
+    //testing function
     public void makeMeal(){
 
         CherryCola testDrink = new CherryCola();

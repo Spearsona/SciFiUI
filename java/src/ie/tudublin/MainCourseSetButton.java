@@ -7,6 +7,7 @@ public class MainCourseSetButton extends Button{
     public MainCourseSetButton(UI ui, float x, float y, float width, float height, MainCourse type, MealSelector mealselect){
       super(ui, x, y, width, height, type.getName());
       this.type = type;
+      this.mealselect= mealselect;
     }
 
     @Override

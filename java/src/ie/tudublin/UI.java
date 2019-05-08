@@ -1,13 +1,13 @@
 package ie.tudublin;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 import processing.core.PApplet;
 
 public class UI extends PApplet
 {
-    List<Button> foodbuttons;
+    ArrayList<Button> foodbuttons;
     Button b;
     Button bev;
     Button mainCourse;
@@ -54,7 +54,7 @@ public class UI extends PApplet
         float buttonWidth =  map(8, 0, 100, 0, width);
         float buttonHeight =  map(2.5f, 0, 100, 0, height);
         
-        float gap = map(0.5f, 0, 100, 0, width);
+        float gap = map(1f, 0, 100, 0, width);
 
         //b = new Button(this, buttonPosX, buttonPosY, buttonWidth, buttonHeight, "Dispense");
         meal = new MealSelector();
@@ -106,13 +106,16 @@ public class UI extends PApplet
         float menuPosX = map(75, 0, 100, 0, width);
         float menuPosY = map(25, 0, 100, 0, height);
 
-        float gap = map(5, 0, 100, 0, height);
+        float textGap = map(5, 0, 100, 0, height);
 
 
         for(int i=0; i < meal.mealList.size(); i++)
         {   
             Consumable mealitem = meal.mealList.get(i);
-            text(mealitem.describeFoodPrep(), menuPosX, menuPosY + (gap * i));
+            fill(255,0,0);
+            text(mealitem.getName(), menuPosX, menuPosY + (textGap * i));
+            fill(255);
+            text(mealitem.describeFoodPrep(), menuPosX, menuPosY + (0.5f * textGap) + (textGap * (i)));
         }
     }
 
