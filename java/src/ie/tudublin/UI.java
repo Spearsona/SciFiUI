@@ -3,6 +3,7 @@ package ie.tudublin;
 import java.util.ArrayList;
 
 import processing.core.PApplet;
+import processing.core.PFont;
 
 public class UI extends PApplet
 {
@@ -48,6 +49,10 @@ public class UI extends PApplet
     public void setup()
     {
         foodbuttons = new ArrayList<Button>();
+
+        PFont font;
+        font = createFont("Space Quest.ttf",11);
+        textFont(font);
 
         float radarPosX = map(95, 0, 100, 0, width);
         float radarPosY = map(10, 0, 100, 0, height);
