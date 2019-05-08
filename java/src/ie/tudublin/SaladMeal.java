@@ -5,7 +5,9 @@ public class SaladMeal extends Consumable implements MainCourse {
     String[] descStrings =     
             {  
                 "Thrown leaves into a salad bowl",
-                "mix with dressing"
+                "add dressing",
+                "add sides",
+                "mix"
             };
 
     SaladMeal(){

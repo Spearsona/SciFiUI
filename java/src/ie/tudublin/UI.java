@@ -37,9 +37,9 @@ public class UI extends PApplet
 
     public void settings()
     {
-        size(800, 800);
+        size(1366, 768);
         // Use fullscreen instead of size to make your interface fullscreen
-        fullScreen(1); 
+        //fullScreen(1); 
     }
 
     public void setup()
@@ -112,7 +112,7 @@ public class UI extends PApplet
         float menuPosX = map(75, 0, 100, 0, width);
         float menuPosY = map(25, 0, 100, 0, height);
 
-        float textGap = map(5, 0, 100, 0, height);
+        float textGap = map(4, 0, 100, 0, height);
 
          
         for(int i=0; i < meal.mealList.size(); i++)
