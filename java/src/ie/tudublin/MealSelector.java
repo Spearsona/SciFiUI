@@ -46,9 +46,11 @@ public class MealSelector{
 
         
         System.out.println("\nPrinting Meal");
+        
         for(int i = 0; i < mealList.size(); i++){
             Consumable testprinter = mealList.get(i);
             System.out.println(testprinter.getName());
+            
             String[] foodprepSteps = testprinter.describeFoodPrep();
             for(int j = 0; j < foodprepSteps.length; j++)
             {

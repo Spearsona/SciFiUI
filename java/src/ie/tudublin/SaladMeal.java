@@ -2,6 +2,11 @@ package ie.tudublin;
 
 public class SaladMeal extends Consumable implements MainCourse {
 
+    String[] descStrings =     
+            {  
+                "Thrown leaves into a salad bowl",
+                "mix with dressing"
+            };
 
     SaladMeal(){
         super("Caeser Salad", 44, "A Caesar salad is a green salad with dressing" );
@@ -9,12 +14,6 @@ public class SaladMeal extends Consumable implements MainCourse {
 
     @Override
     public String[] describeFoodPrep() {
-        
-        String[] descStrings =     
-            {  
-                "Thrown leaves into a salad bowl",
-                "mix with dressing"
-            };
             return descStrings;
         }
 

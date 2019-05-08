@@ -93,7 +93,7 @@ public class UI extends PApplet
         //mc.update();
         //mc.render();
         
-        //printMeal();
+        printMeal();
 
         radar.update();
         radar.render();
@@ -105,7 +105,7 @@ public class UI extends PApplet
         }
         */
     }
-    
+
     //Test function for printing Prep steps to UI - requires tweaking to display correctly
     public void printMeal(){
         textAlign(LEFT);
@@ -117,16 +117,16 @@ public class UI extends PApplet
          
         for(int i=0; i < meal.mealList.size(); i++)
         {   
+            float itemPosY =  menuPosY + (textGap * 5 * i);
             Consumable mealitem = meal.mealList.get(i);
             fill(255,0,0);
-            text(mealitem.getName(), menuPosX, menuPosY + (textGap * 5 * i));
+            text(mealitem.getName(), menuPosX, itemPosY);
 
             fill(255);
             String[] foodprepSteps = mealitem.describeFoodPrep();
             for(int j = 0; j < foodprepSteps.length; j++)
             {
-                text(foodprepSteps[j], menuPosX, menuPosY + (0.5f * textGap * j));
-                System.out.println(foodprepSteps[j]);
+                text(foodprepSteps[j], menuPosX, itemPosY + textGap + (textGap * j));
             } 
         }
     }

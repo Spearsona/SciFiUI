@@ -1,6 +1,11 @@
 package ie.tudublin;
 
 public class CherryCola extends Consumable implements Beverage{
+    String[] descStrings = 
+        {   
+            "Pour into glass",
+            "Add Straw"
+        };
 
     CherryCola(){
         super("Cherry Cola", 80, "Bubbly Corn-Syrup based drink with added flavor!");
@@ -23,11 +28,7 @@ public class CherryCola extends Consumable implements Beverage{
 
     @Override
     public String[] describeFoodPrep() {
-        String[] descStrings = 
-        {   
-            "Pour into glass",
-            "Add Straw"
-        };
+        
 
         return descStrings;
     }
