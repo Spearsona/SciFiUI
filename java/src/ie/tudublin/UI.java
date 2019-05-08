@@ -134,7 +134,6 @@ public class UI extends PApplet
             else{
                 //System.out.println("False");
             }
-            
             //System.out.println("Looping");
 
 

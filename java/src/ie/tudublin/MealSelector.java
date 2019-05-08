@@ -12,7 +12,7 @@ public class MealSelector{
 
     public MealSelector()
     {
-       makeTestMeal();
+      // makeTestMeal();
     }
 
     public void setDessert(Dessert type) 
@@ -39,14 +39,14 @@ public class MealSelector{
 
      //testing function
      public void makeTestMeal(){
-
-        CherryCola testDrink = new CherryCola();
+        /*CherryCola testDrink = new CherryCola();
         SaladMeal testMainCourse = new SaladMeal();
         HotFudgeSundae testDessert = new HotFudgeSundae();
+        */
 
-        mealList.add(testDrink);
-        mealList.add(testMainCourse);
-        mealList.add(testDessert);
+        mealList.add((Consumable)this.dessert);
+        mealList.add((Consumable) this.mainCourse);
+        mealList.add((Consumable) this.beverage);
 
         System.out.println("\nPrinting Meal");
         for(int i = 0; i < mealList.size(); i++){
