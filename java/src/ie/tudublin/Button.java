@@ -20,7 +20,6 @@ public class Button extends PApplet
         this.y = y;
         this.w = w;
         this.h = h;
-         
         this.text = text; 
     }
 

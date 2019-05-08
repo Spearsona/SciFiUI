@@ -8,7 +8,7 @@ public class MealSelector{
     public ArrayList<Consumable> mealList = new ArrayList<Consumable>();
     
     Dessert dessert;
-
+    MainCourse mainCourse;
 
     public MealSelector()
     {
@@ -16,8 +16,6 @@ public class MealSelector{
     }
 
     public void makeMeal(){
-
-
 
         CherryCola testDrink = new CherryCola();
         SaladMeal testMainCourse = new SaladMeal();
@@ -36,24 +34,22 @@ public class MealSelector{
             Consumable testprinter = mealList.get(i);
             System.out.println(testprinter.describeFoodPrep());
         }
-        
-        
     }
-
 
     public void setDessert(Dessert type) 
     {
         this.dessert = type;
         System.out.println(type.getName());
-	}
-         
+    }
     
-
-
+    public void setMainCourse(MainCourse type) 
+    {
+        this.mainCourse = type;
+        System.out.println(type.getName());
+    }
+    
     //System.out.println(testDrink.toString());
-
     //public ArrayList<Beverage> beveList = new  ArrayList<Beverage>();
-
     //public Beverage[] beverages = new Beverage[3];
 }
 

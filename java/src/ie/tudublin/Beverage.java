@@ -5,5 +5,6 @@ public interface Beverage{
     int numberOfIceCubes();
     boolean isCarbonated();
     String glassType();
+    public String getName();
 
 }

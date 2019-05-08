@@ -10,11 +10,9 @@ public class UI extends PApplet
     List<Button> foodbuttons;
     Button b;
     Button bev;
-    Button mainMeal;
+    Button mainCourse;
     Button dessert;
 
-
-    
     MovingCircle mc;
     MealSelector meal;
 
@@ -66,8 +64,10 @@ public class UI extends PApplet
 
         //bev = new Button(this, buttonPosX, buttonPosY, buttonWidth, buttonHeight, new CherryCola());
         dessert = new DessertSettingButton(this, buttonPosX + (2.3f * buttonWidth) + gap, buttonPosY, buttonWidth, buttonHeight, new HotFudgeSundae(), meal);
+        mainCourse = new MainCourseSetButton(this, buttonPosX + (1.1f * buttonWidth) + gap, buttonPosY, buttonWidth, buttonHeight, new SaladMeal(), meal);
         foodbuttons.add(dessert);
-        //mainMeal = new Button(this, buttonPosX + (1.1f * buttonWidth) + gap, buttonPosY, buttonWidth, buttonHeight, new SaladMeal());
+        foodbuttons.add(mainCourse);
+        
         
     }
 
@@ -80,12 +80,11 @@ public class UI extends PApplet
         //b.render();
         //bev.render();
         dessert.render();
+        mainCourse.render();
         //mainMeal.render();
 
-        
         //b.checkBounds();
-        
-        
+         
         //mc.update();
         //mc.render();
         
@@ -93,11 +92,13 @@ public class UI extends PApplet
 
         radar.update();
         radar.render();
-
+        
+        /*Sample KeyPress Function
         if (checkKey(LEFT))
         {
             System.out.println("Left arrow key pressed");
         }
+        */
     }
 
     public void printMeal(){
