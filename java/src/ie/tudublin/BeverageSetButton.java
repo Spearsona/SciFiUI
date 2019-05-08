@@ -1,10 +1,10 @@
 package ie.tudublin;
-public class MainCourseSetButton extends Button{
+public class BeverageSetButton extends Button{
 
-    private MainCourse type;
+    private Beverage type;
     private MealSelector mealselect;
 
-    public MainCourseSetButton(UI ui, float x, float y, float width, float height, MainCourse type, MealSelector mealselect){
+    public BeverageSetButton(UI ui, float x, float y, float width, float height, Beverage type, MealSelector mealselect){
       super(ui, x, y, width, height, type.getName());
       this.type = type;
       this.mealselect= mealselect;
@@ -14,7 +14,7 @@ public class MainCourseSetButton extends Button{
     public void doClick(){
         if(checkBounds())
         {
-            mealselect.setMainCourse(this.type);
+            mealselect.setBeverage(this.type);
         }
     }
 

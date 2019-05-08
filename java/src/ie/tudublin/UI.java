@@ -9,9 +9,10 @@ public class UI extends PApplet
 {
     ArrayList<Button> foodbuttons;
     Button b;
-    Button bev;
+    
     Button mainCourse;
     Button dessert;
+    Button beverage;
 
     MovingCircle mc;
     MealSelector meal;
@@ -62,11 +63,12 @@ public class UI extends PApplet
         //mc = new MovingCircle(this, width / 2, height * .75f, 50);
         radar = new Radar(this, 1, radarPosX, radarPosY , radarSize);
 
-        //bev = new Button(this, buttonPosX, buttonPosY, buttonWidth, buttonHeight, new CherryCola());
+        beverage = new BeverageSetButton(this, buttonPosX, buttonPosY, buttonWidth, buttonHeight, new CherryCola(), meal);
         dessert = new DessertSettingButton(this, buttonPosX + (2.3f * buttonWidth) + gap, buttonPosY, buttonWidth, buttonHeight, new HotFudgeSundae(), meal);
         mainCourse = new MainCourseSetButton(this, buttonPosX + (1.1f * buttonWidth) + gap, buttonPosY, buttonWidth, buttonHeight, new SaladMeal(), meal);
         foodbuttons.add(dessert);
         foodbuttons.add(mainCourse);
+        foodbuttons.add(beverage);
         
         
     }
@@ -78,13 +80,12 @@ public class UI extends PApplet
         stroke(255);
         background(0);
         //b.render();
-        //bev.render();
+        beverage.render();
         dessert.render();
         mainCourse.render();
+       
         //mainMeal.render();
-
         //b.checkBounds();
-         
         //mc.update();
         //mc.render();
         
@@ -129,10 +130,10 @@ public class UI extends PApplet
 
             }
             else{
-                System.out.println("False");
+                //System.out.println("False");
             }
             
-            System.out.println("Looping");
+            //System.out.println("Looping");
 
 
         }

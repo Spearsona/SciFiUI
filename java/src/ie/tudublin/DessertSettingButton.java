@@ -15,7 +15,6 @@ public class DessertSettingButton extends Button{
     //If clicked 
     @Override
     public void doClick(){
-        System.out.println("clicked");
         if(checkBounds())
         {
             mealselect.setDessert(this.type);

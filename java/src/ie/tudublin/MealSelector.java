@@ -9,33 +9,11 @@ public class MealSelector{
     
     Dessert dessert;
     MainCourse mainCourse;
+    Beverage beverage;
 
     public MealSelector()
     {
-        
-       //makeMeal();
-    }
-
-    //testing function
-    public void makeMeal(){
-
-        CherryCola testDrink = new CherryCola();
-        SaladMeal testMainCourse = new SaladMeal();
-        HotFudgeSundae testDessert = new HotFudgeSundae();
-
-        //System.out.println(testDrink.describeFoodPrep());
-        //System.out.println(testMainCourse.describeFoodPrep());
-        //System.out.println(testDessert.describeFoodPrep());
-
-        mealList.add(testDrink);
-        mealList.add(testMainCourse);
-        mealList.add(testDessert);
-
-        //System.out.println("\nPrinting Meal");
-        for(int i = 0; i < mealList.size(); i++){
-            Consumable testprinter = mealList.get(i);
-            System.out.println(testprinter.describeFoodPrep());
-        }
+       //makeTestMeal();
     }
 
     public void setDessert(Dessert type) 
@@ -49,10 +27,34 @@ public class MealSelector{
         this.mainCourse = type;
         System.out.println(type.getName());
     }
+
+    public void setBeverage(Beverage type) 
+    {
+        this.beverage = type;
+        System.out.println(type.getName());
+    }
     
     //System.out.println(testDrink.toString());
     //public ArrayList<Beverage> beveList = new  ArrayList<Beverage>();
     //public Beverage[] beverages = new Beverage[3];
+
+     //testing function
+     public void makeTestMeal(){
+
+        CherryCola testDrink = new CherryCola();
+        SaladMeal testMainCourse = new SaladMeal();
+        HotFudgeSundae testDessert = new HotFudgeSundae();
+
+        mealList.add(testDrink);
+        mealList.add(testMainCourse);
+        mealList.add(testDessert);
+
+        //System.out.println("\nPrinting Meal");
+        for(int i = 0; i < mealList.size(); i++){
+            Consumable testprinter = mealList.get(i);
+            System.out.println(testprinter.describeFoodPrep());
+        }
+    }
 }
 
     
