@@ -52,7 +52,7 @@ public class UI extends PApplet
 
         float menuButtonX =  map(30, 0, 100, 0, width);
         float menuButtonY =  map(30, 0, 100, 0, height);
-        float buttonWidth =  map(8, 0, 100, 0, width);
+        float buttonWidth =  map(9, 0, 100, 0, width);
         float buttonHeight =  map(2.5f, 0, 100, 0, height);
         
         float gap = map(1f, 0, 100, 0, width);
@@ -62,7 +62,9 @@ public class UI extends PApplet
 
        
         //mc = new MovingCircle(this, width / 2, height * .75f, 50);
-        radar = new Radar(this, 0, radarPosX, radarPosY , radarSize);
+
+        //to do: change radar variable based on calorie count
+        radar = new Radar(this, 1, radarPosX, radarPosY , radarSize);
 
         beverage = new BeverageSetButton(this, menuButtonX, menuButtonY, buttonWidth, buttonHeight, new CherryCola(), meal);
         mainCourse = new MainCourseSetButton(this, menuButtonX + buttonWidth + gap, menuButtonY, buttonWidth, buttonHeight, new SaladMeal(), meal);
