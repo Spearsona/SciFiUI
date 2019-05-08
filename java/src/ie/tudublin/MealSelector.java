@@ -46,8 +46,9 @@ public class MealSelector{
 
         mealList.add((Consumable)this.dessert);
         mealList.add((Consumable) this.mainCourse);
-        mealList.add((Consumable) this.beverage);
+        mealList.add((Consumable)this.beverage);
 
+        
         System.out.println("\nPrinting Meal");
         for(int i = 0; i < mealList.size(); i++){
             Consumable testprinter = mealList.get(i);

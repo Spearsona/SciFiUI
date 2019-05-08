@@ -10,6 +10,9 @@ public class PrepareMealButton extends Button{
 
    @Override
    public void doClick(){
+
+        //need to add check to make sure all meal buttons are set
+        
        if(checkBounds())
        {
            mealselect.makeTestMeal();
