@@ -12,6 +12,7 @@ public class UI extends PApplet
     Button mainCourse;
     Button dessert;
     Button beverage;
+    Button beverage2;
     Button prepare;
 
     MovingCircle mc;
@@ -67,14 +68,17 @@ public class UI extends PApplet
         radar = new Radar(this, 1, radarPosX, radarPosY , radarSize);
 
         beverage = new BeverageSetButton(this, menuButtonX, menuButtonY, buttonWidth, buttonHeight, new CherryCola(), meal);
+        beverage2 = new BeverageSetButton(this, menuButtonX, menuButtonY + (buttonHeight + gap), buttonWidth, buttonHeight, new Tea(), meal);
         mainCourse = new MainCourseSetButton(this, menuButtonX + buttonWidth + gap, menuButtonY, buttonWidth, buttonHeight, new SaladMeal(), meal);
         dessert = new DessertSettingButton(this, menuButtonX + 2 * (buttonWidth + gap), menuButtonY, buttonWidth, buttonHeight, new HotFudgeSundae(), meal);
-        prepare = new PrepareMealButton(this, menuButtonX + buttonWidth + gap, menuButtonY + buttonHeight + gap, buttonWidth, buttonHeight, meal);
+        prepare = new PrepareMealButton(this, menuButtonX + buttonWidth + gap, menuButtonY +  (2 * (buttonHeight + gap)), buttonWidth, buttonHeight, meal);
 
         foodbuttons.add(dessert);
         foodbuttons.add(mainCourse);
         foodbuttons.add(beverage);
+        foodbuttons.add(beverage2);
         foodbuttons.add(prepare);
+
 
     }
 
@@ -86,9 +90,11 @@ public class UI extends PApplet
         background(0);
         //b.render();
         beverage.render();
+        beverage2.render();
         dessert.render();
         mainCourse.render();
         prepare.render();
+
        
         //mainMeal.render();
         //b.checkBounds();
