@@ -74,12 +74,21 @@ public class UI extends PApplet
         //to do: change radar variable based on calorie count
         radar = new Radar(this, 1, radarPosX, radarPosY , radarSize);
 
+        //Beverages
         beverage = new BeverageSetButton(this, menuButtonX, menuButtonY, buttonWidth, buttonHeight, new CherryCola(), meal);
         beverage2 = new BeverageSetButton(this, menuButtonX, menuButtonY + (buttonHeight + gap), buttonWidth, buttonHeight, new Tea(), meal);
+        
+        //Main Courses
         mainCourse = new MainCourseSetButton(this, menuButtonX + buttonWidth + gap, menuButtonY, buttonWidth, buttonHeight, new SaladMeal(), meal);
         mainCourse2 = new MainCourseSetButton(this, menuButtonX + buttonWidth + gap, menuButtonY + (buttonHeight + gap), buttonWidth, buttonHeight, new Burrito(), meal);
+        
+        //Desserts
         dessert = new DessertSettingButton(this, menuButtonX + 2 * (buttonWidth + gap), menuButtonY, buttonWidth, buttonHeight, new HotFudgeSundae(), meal);
+        
+        //Prep Button
         prepare = new PrepareMealButton(this, menuButtonX + buttonWidth + gap, menuButtonY +  (2 * (buttonHeight + gap)), buttonWidth, buttonHeight, meal);
+
+        //To do :Add Reset Button
 
         foodbuttons.add(dessert);
         foodbuttons.add(mainCourse);
@@ -126,19 +135,29 @@ public class UI extends PApplet
 
     //Test function for printing Prep steps to UI - requires tweaking to display correctly
     public void printMeal(){
-        textAlign(LEFT);
+        Consumable mealitem;
+        String[] foodprepSteps;
+        Integer totalCals = 0;
+        int i = 0;
+        int j = 0;
         float menuPosX = map(75, 0, 100, 0, width);
         float menuPosY = map(25, 0, 100, 0, height);
 
         float textGapH = map(4, 0, 100, 0, height);
         float textGapW = map(10, 0, 100, 0, width);
+        float endItemsPos;
+        float itemPosY = 0;
 
-        for(int i=0; i < meal.mealList.size(); i++)
+        textAlign(LEFT);
+
+
+        for(i=0; i < meal.mealList.size(); i++)
         {   
-            Consumable mealitem = meal.mealList.get(i);
-            String[] foodprepSteps = mealitem.describeFoodPrep();
+            mealitem = meal.mealList.get(i);
+            foodprepSteps = mealitem.describeFoodPrep();
             //float itemPosX =  menuPosY + (textGapW * 5 * i);
-            float itemPosY =  menuPosY + (textGapH * 5 * i);
+            itemPosY =  menuPosY + (textGapH * 5 * i);
+            
             
             
             fill(255,0,0);
@@ -147,13 +166,16 @@ public class UI extends PApplet
 
             fill(255);
             
-            for(int j = 0; j < foodprepSteps.length; j++)
+            for(j = 0; j < foodprepSteps.length; j++)
             {
                 text(foodprepSteps[j], menuPosX, itemPosY + textGapH + (textGapH * j));
+                totalCals = totalCals + mealitem.getCalories();
             } 
+            
         }
+        text("Total Calories: " + totalCals.toString(),menuPosX + textGapW, itemPosY + (2 * textGapH) + (textGapH * j));
     }
-    
+        
 
     public void mousePressed(){
         
