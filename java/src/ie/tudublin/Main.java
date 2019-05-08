@@ -7,7 +7,6 @@ public class Main
 	{
 		String[] a = {"MAIN"};
         processing.core.PApplet.runSketch( a, new UI());
-		
 	}
 
 	/*public void mealSelector()
@@ -22,7 +21,6 @@ public class Main
 	{
 		Main main = new Main();
 		main.startUI();
-		
 		
 		//MealSelector, instaniate variables, store consumables in list of Consumables
 		//Check calorie does not exceed 800
