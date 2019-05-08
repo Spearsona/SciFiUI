@@ -2,9 +2,8 @@ package ie.tudublin;
 
 import java.util.ArrayList;
 
-
-
 public class MealSelector{
+
     public ArrayList<Consumable> mealList = new ArrayList<Consumable>();
     
     Dessert dessert;
@@ -50,10 +49,9 @@ public class MealSelector{
         mealList.add(testDessert);
 
         //System.out.println("\nPrinting Meal");
-        for(int i = 0; i < mealList.size(); i++){
-            Consumable testprinter = mealList.get(i);
-            System.out.println(testprinter.describeFoodPrep());
-        }
+        //for(int i = 0; i < mealList.size(); i++){
+            //Consumable testprinter = mealList.get(i);
+            //System.out.println(testprinter.describeFoodPrep());
     }
 }
 

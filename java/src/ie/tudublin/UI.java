@@ -13,6 +13,7 @@ public class UI extends PApplet
     Button mainCourse;
     Button dessert;
     Button beverage;
+    Button prepare;
 
     MovingCircle mc;
     MealSelector meal;
@@ -50,26 +51,29 @@ public class UI extends PApplet
         float radarPosY = map(10, 0, 100, 0, height);
         float radarSize = map(2.5f,0, 100, 0, height);
 
-        float buttonPosX =  map(30, 0, 100, 0, width);
-        float buttonPosY =  map(30, 0, 100, 0, height);
+        float menuButtonX =  map(30, 0, 100, 0, width);
+        float menuButtonY =  map(30, 0, 100, 0, height);
         float buttonWidth =  map(8, 0, 100, 0, width);
         float buttonHeight =  map(2.5f, 0, 100, 0, height);
         
         float gap = map(1f, 0, 100, 0, width);
 
-        //b = new Button(this, buttonPosX, buttonPosY, buttonWidth, buttonHeight, "Dispense");
+        //b = new Button(this, menuButtonX, menuButtonY, buttonWidth, buttonHeight, "Dispense");
         meal = new MealSelector();
+
        
         //mc = new MovingCircle(this, width / 2, height * .75f, 50);
-        radar = new Radar(this, 1, radarPosX, radarPosY , radarSize);
+        radar = new Radar(this, 0, radarPosX, radarPosY , radarSize);
 
-        beverage = new BeverageSetButton(this, buttonPosX, buttonPosY, buttonWidth, buttonHeight, new CherryCola(), meal);
-        dessert = new DessertSettingButton(this, buttonPosX + (2.3f * buttonWidth) + gap, buttonPosY, buttonWidth, buttonHeight, new HotFudgeSundae(), meal);
-        mainCourse = new MainCourseSetButton(this, buttonPosX + (1.1f * buttonWidth) + gap, buttonPosY, buttonWidth, buttonHeight, new SaladMeal(), meal);
+        beverage = new BeverageSetButton(this, menuButtonX, menuButtonY, buttonWidth, buttonHeight, new CherryCola(), meal);
+        mainCourse = new MainCourseSetButton(this, menuButtonX + buttonWidth + gap, menuButtonY, buttonWidth, buttonHeight, new SaladMeal(), meal);
+        dessert = new DessertSettingButton(this, menuButtonX + 2 * (buttonWidth + gap), menuButtonY, buttonWidth, buttonHeight, new HotFudgeSundae(), meal);
+        
         foodbuttons.add(dessert);
         foodbuttons.add(mainCourse);
         foodbuttons.add(beverage);
-        
+
+        prepare = new PrepareMealButton(this, menuButtonX + buttonWidth + gap, menuButtonY + buttonHeight + gap, buttonWidth, buttonHeight, meal);
         
     }
 
@@ -83,6 +87,7 @@ public class UI extends PApplet
         beverage.render();
         dessert.render();
         mainCourse.render();
+        prepare.render();
        
         //mainMeal.render();
         //b.checkBounds();
@@ -127,7 +132,6 @@ public class UI extends PApplet
 
             if(button.checkBounds()){
                 button.doClick();
-
             }
             else{
                 //System.out.println("False");
