@@ -8,9 +8,15 @@ public class SaladMeal extends Consumable implements MainCourse {
     }
 
     @Override
-    public String describeFoodPrep() {
-        return "Thrown leaves into a salad bowl and mix with dressing";
-    }
+    public String[] describeFoodPrep() {
+        
+        String[] descStrings =     
+            {  
+                "Thrown leaves into a salad bowl",
+                "mix with dressing"
+            };
+            return descStrings;
+        }
 
     @Override
     public String getMeatType() {

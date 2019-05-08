@@ -22,8 +22,14 @@ public class CherryCola extends Consumable implements Beverage{
     }
 
     @Override
-    public String describeFoodPrep() {
-        return "pour into glass, add straw";
+    public String[] describeFoodPrep() {
+        String[] descStrings = 
+        {   
+            "Pour into glass",
+            "Add Straw"
+        };
+
+        return descStrings;
     }
 
 }

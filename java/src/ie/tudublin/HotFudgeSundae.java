@@ -18,8 +18,16 @@ public class HotFudgeSundae extends Consumable implements Dessert{
     }
 
     @Override
-    public String describeFoodPrep() {
-        return "Scoop into a bowl, top with hot fudge sauce, garnish.";
+    public String[] describeFoodPrep() {
+        String[] descStrings = 
+        {
+            "Scoop ice cream into bowl",
+            "Top with hot fudge sauce",
+            "Garnish with fruit and nuts"
+        };
+
+        return descStrings;
+        //return "Scoop into a bowl, top with hot fudge sauce, garnish.";
     }
 
 }

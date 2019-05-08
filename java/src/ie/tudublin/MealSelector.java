@@ -37,13 +37,9 @@ public class MealSelector{
     //public ArrayList<Beverage> beveList = new  ArrayList<Beverage>();
     //public Beverage[] beverages = new Beverage[3];
 
-     //testing function
+     //testing function - to be replaced with a MealPreparer Class
      public void makeTestMeal(){
-        /*CherryCola testDrink = new CherryCola();
-        SaladMeal testMainCourse = new SaladMeal();
-        HotFudgeSundae testDessert = new HotFudgeSundae();
-        */
-
+        
         mealList.add((Consumable)this.dessert);
         mealList.add((Consumable) this.mainCourse);
         mealList.add((Consumable)this.beverage);
@@ -52,7 +48,13 @@ public class MealSelector{
         System.out.println("\nPrinting Meal");
         for(int i = 0; i < mealList.size(); i++){
             Consumable testprinter = mealList.get(i);
-            System.out.println(testprinter.describeFoodPrep());
+            System.out.println(testprinter.getName());
+            String[] foodprepSteps = testprinter.describeFoodPrep();
+            for(int j = 0; j < foodprepSteps.length; j++)
+            {
+                System.out.println(foodprepSteps[j]);
+            } 
+            
         }
      }
 }

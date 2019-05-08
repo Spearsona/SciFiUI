@@ -15,7 +15,12 @@ public class PrepareMealButton extends Button{
         
        if(checkBounds())
        {
-           mealselect.makeTestMeal();
+           if(mealselect.beverage != null && mealselect.dessert !=null && mealselect.dessert !=null){
+               mealselect.makeTestMeal();
+           }
+           else{
+               System.out.println("You've forgotten part of your meal!");
+           }
        }
    }
 

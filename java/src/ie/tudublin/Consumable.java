@@ -13,8 +13,8 @@ public abstract class Consumable
         this.description = description;
 
     }
-
-    public abstract String describeFoodPrep();
+    //Returns an array of strings describing the food's preparation steps
+    public abstract String[] describeFoodPrep();
 
       /**
      * @return the calories
@@ -40,8 +40,6 @@ public abstract class Consumable
     }
 
     /* Add image functionality
-    
-    
     public getPicture(){
         
     }

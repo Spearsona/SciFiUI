@@ -19,9 +19,6 @@ public class DessertSettingButton extends Button{
             mealselect.setDessert(this.type);
         }
     }
-
-         
-
             
         //if true, set s
         //mealSelector.setDessert(this.type);
