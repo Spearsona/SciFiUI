@@ -163,19 +163,19 @@ public class UI extends PApplet
             fill(255,0,0);
             text(mealitem.getName(), menuPosX, itemPosY);
             text("Calories: " + mealitem.getCalories(),menuPosX + textGapW, itemPosY);
-
+            totalCals = totalCals + mealitem.getCalories();
             fill(255);
             
             for(j = 0; j < foodprepSteps.length; j++)
             {
                 text(foodprepSteps[j], menuPosX, itemPosY + textGapH + (textGapH * j));
-                totalCals = totalCals + mealitem.getCalories();
+                
             } 
             
         }
         text("Total Calories: " + totalCals.toString(),menuPosX + textGapW, itemPosY + (2 * textGapH) + (textGapH * j));
     }
-        
+
 
     public void mousePressed(){
         
