@@ -23,6 +23,7 @@ public class Main
 		Main main = new Main();
 		main.startUI();
 		
+		
 		//MealSelector, instaniate variables, store consumables in list of Consumables
 		//Check calorie does not exceed 800
 		//Loop over food prep descriptions with 2 second wait between each 

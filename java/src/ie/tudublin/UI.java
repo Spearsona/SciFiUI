@@ -10,9 +10,11 @@ public class UI extends PApplet
     Button b;
     
     Button mainCourse;
+    Button mainCourse2;
     Button dessert;
     Button beverage;
     Button beverage2;
+    
     Button prepare;
 
     MovingCircle mc;
@@ -70,11 +72,13 @@ public class UI extends PApplet
         beverage = new BeverageSetButton(this, menuButtonX, menuButtonY, buttonWidth, buttonHeight, new CherryCola(), meal);
         beverage2 = new BeverageSetButton(this, menuButtonX, menuButtonY + (buttonHeight + gap), buttonWidth, buttonHeight, new Tea(), meal);
         mainCourse = new MainCourseSetButton(this, menuButtonX + buttonWidth + gap, menuButtonY, buttonWidth, buttonHeight, new SaladMeal(), meal);
+        mainCourse2 = new MainCourseSetButton(this, menuButtonX + buttonWidth + gap, menuButtonY + (buttonHeight + gap), buttonWidth, buttonHeight, new Burrito(), meal);
         dessert = new DessertSettingButton(this, menuButtonX + 2 * (buttonWidth + gap), menuButtonY, buttonWidth, buttonHeight, new HotFudgeSundae(), meal);
         prepare = new PrepareMealButton(this, menuButtonX + buttonWidth + gap, menuButtonY +  (2 * (buttonHeight + gap)), buttonWidth, buttonHeight, meal);
 
         foodbuttons.add(dessert);
         foodbuttons.add(mainCourse);
+        foodbuttons.add(mainCourse2);
         foodbuttons.add(beverage);
         foodbuttons.add(beverage2);
         foodbuttons.add(prepare);
@@ -93,6 +97,7 @@ public class UI extends PApplet
         beverage2.render();
         dessert.render();
         mainCourse.render();
+        mainCourse2.render();
         prepare.render();
 
        
@@ -125,13 +130,15 @@ public class UI extends PApplet
          
         for(int i=0; i < meal.mealList.size(); i++)
         {   
-            float itemPosY =  menuPosY + (textGap * 5 * i);
             Consumable mealitem = meal.mealList.get(i);
+            String[] foodprepSteps = mealitem.describeFoodPrep();
+            float itemPosY =  menuPosY + (textGap * 5 * i);
+            
             fill(255,0,0);
             text(mealitem.getName(), menuPosX, itemPosY);
 
             fill(255);
-            String[] foodprepSteps = mealitem.describeFoodPrep();
+            
             for(int j = 0; j < foodprepSteps.length; j++)
             {
                 text(foodprepSteps[j], menuPosX, itemPosY + textGap + (textGap * j));
