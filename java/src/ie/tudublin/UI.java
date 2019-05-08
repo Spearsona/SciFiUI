@@ -128,12 +128,11 @@ public class UI extends PApplet
         float textGapH = map(4, 0, 100, 0, height);
         float textGapW = map(10, 0, 100, 0, width);
 
-         
         for(int i=0; i < meal.mealList.size(); i++)
         {   
             Consumable mealitem = meal.mealList.get(i);
             String[] foodprepSteps = mealitem.describeFoodPrep();
-            float itemPosX =  menuPosY + (textGapW * 5 * i);
+            //float itemPosX =  menuPosY + (textGapW * 5 * i);
             float itemPosY =  menuPosY + (textGapH * 5 * i);
             
             
