@@ -12,7 +12,7 @@ public class MealSelector{
 
     public MealSelector()
     {
-       //makeTestMeal();
+       makeTestMeal();
     }
 
     public void setDessert(Dessert type) 
@@ -48,11 +48,12 @@ public class MealSelector{
         mealList.add(testMainCourse);
         mealList.add(testDessert);
 
-        //System.out.println("\nPrinting Meal");
-        //for(int i = 0; i < mealList.size(); i++){
-            //Consumable testprinter = mealList.get(i);
-            //System.out.println(testprinter.describeFoodPrep());
-    }
+        System.out.println("\nPrinting Meal");
+        for(int i = 0; i < mealList.size(); i++){
+            Consumable testprinter = mealList.get(i);
+            System.out.println(testprinter.describeFoodPrep());
+        }
+     }
 }
 
     

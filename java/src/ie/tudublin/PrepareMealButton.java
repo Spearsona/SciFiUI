@@ -13,7 +13,6 @@ public class PrepareMealButton extends Button{
        if(checkBounds())
        {
            mealselect.makeTestMeal();
-           
        }
    }
 

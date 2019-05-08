@@ -2,7 +2,6 @@ package ie.tudublin;
 
 import java.util.ArrayList;
 
-
 import processing.core.PApplet;
 
 public class UI extends PApplet
@@ -68,13 +67,13 @@ public class UI extends PApplet
         beverage = new BeverageSetButton(this, menuButtonX, menuButtonY, buttonWidth, buttonHeight, new CherryCola(), meal);
         mainCourse = new MainCourseSetButton(this, menuButtonX + buttonWidth + gap, menuButtonY, buttonWidth, buttonHeight, new SaladMeal(), meal);
         dessert = new DessertSettingButton(this, menuButtonX + 2 * (buttonWidth + gap), menuButtonY, buttonWidth, buttonHeight, new HotFudgeSundae(), meal);
-        
+        prepare = new PrepareMealButton(this, menuButtonX + buttonWidth + gap, menuButtonY + buttonHeight + gap, buttonWidth, buttonHeight, meal);
+
         foodbuttons.add(dessert);
         foodbuttons.add(mainCourse);
         foodbuttons.add(beverage);
+        foodbuttons.add(prepare);
 
-        prepare = new PrepareMealButton(this, menuButtonX + buttonWidth + gap, menuButtonY + buttonHeight + gap, buttonWidth, buttonHeight, meal);
-        
     }
 
     Radar radar;
@@ -129,7 +128,6 @@ public class UI extends PApplet
         
         for(Button button:foodbuttons)
         {
-
             if(button.checkBounds()){
                 button.doClick();
             }
